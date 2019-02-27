@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Controle suas tarefas!</h1>
+    <p class="lead">Suas tarefas escolares sempre em dia!</p>
+    
+    @Html.ActionLink("Comece agora mesmo!","Index","Tarefas")
+    
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Tarefas em dia!</h2>
+        <p>
+            Com esse poderoso sistema você nunca mais atrasará suas entregas de atividades 
+            pois ele te lembrará sempre que algo estiver para vencer! Fique tranquilo e
+            cadastre todas suas pendências e seja um aluno muito mais produtivo!            
+        </p>
+        
+    </div>
+    <div class="col-md-4">
+        <h2>Datas e descrições!</h2>
+        <p>Nesse inovador sistema além do nome da tarfa você pode também colocar poderosas descrições!</p>
+        @Html.ActionLink("Comece agora mesmo!", "Index", "Tarefas")
+    </div>
+    <div class="col-md-4">
+        <h2>
+
+            
+            @{                 
+                WriteLiteral(AtividadesEscolares.Controllers.Funcoes.funcoes.TotalVencidas() + " tarefa(s) vencida(s)");
+
+            }
+
+
+        </h2>
+        @Html.ActionLink("Clique para ver!", "Vencidas", "Tarefas")
+        
+    </div>
+</div>
